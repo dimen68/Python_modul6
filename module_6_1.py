@@ -1,43 +1,44 @@
 # Задача "Съедобное, несъедобное"
 class Animal:
-     def __init__(self, name, alive = True, fed = False):
-         self.alive = alive
-         self.fed = fed
-         self.name = name
+    def __init__(self, name, alive=True, fed=False):
+        self.alive = alive
+        self.fed = fed
+        self.name = name
 
-     def eat(self, food):
-         if food.edible:
-             self.fed = True
-             print(self.name, 'съел', food.name)
-         else:
-             self.alive = False
-             print(self.name, 'не стал есть', food.name)
+    def eat(self, food):
+        if food.edible:
+            self.fed = True
+            print(self.name, 'съел', food.name)
+        else:
+            self.alive = False
+            print(self.name, 'не стал есть', food.name)
 
 
 class Plant:
-    def __init__(self,  name, edible = False):
+    def __init__(self, name, edible=False):
         self.edible = edible
         self.name = name
 
 
 class Mammal(Animal):
-    def __init__(self, name, alive = True, fed = False):
+    def __init__(self, name, alive=True, fed=False):
         super().__init__(name, alive, fed)
 
 
 class Predator(Animal):
-    def __init__(self, name, alive = True, fed = False):
+    def __init__(self, name, alive=True, fed=False):
         super().__init__(name, alive, fed)
 
 
 class Flower(Plant):
-    def __init__(self, name, edible = False):
+    def __init__(self, name, edible=False):
         super().__init__(name, edible)
 
 
 class Fruit(Plant):
-    def __init__(self, name, edible = True):
+    def __init__(self, name, edible=True):
         super().__init__(name, edible)
+
 
 if __name__ == '__main__':
     a1 = Predator('Волк с Уолл-Стрит')
